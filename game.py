@@ -51,7 +51,7 @@ class Game:
         return False
 
     def play_again(self, answer):
-        # if player want to play again, it runs all over again
+        # if player wants to play again, it runs all over again
         # else it exits
         self.answer = answer
         if self.answer.lower() == 'y' or self.answer.lower() == 'yes':
@@ -63,7 +63,7 @@ class Game:
             exit()
 
     def main(self):
-        # loops till game has been one or lost
+        # loops till game has been won or lost
         while not self.game_won():
             self.clear_screen()
             self.menu()
