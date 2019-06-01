@@ -17,10 +17,12 @@ class Game:
         print("** Welcome to Phrase Hunter **")
         print("Rules: guess a letter and complete the phrase to win")
         print("Lives remaining: {}\n".format(self.lives))
+        # will show the phrase with _ unless guessed
         self.current.show_phrase()
         print()
 
     def player_guess(self):
+        # gets the guesses plus some logic for any 'wrong' guesses
         guess = ''
         while not guess:
             player_guess = input("Enter a guess: ")
@@ -41,6 +43,7 @@ class Game:
         return guess.lower()
 
     def game_won(self):
+        # checks if the entire phrase was guessed
         if self.current.fully_guessed():
             self.clear_screen()
             print("You won!")
@@ -48,6 +51,8 @@ class Game:
         return False
 
     def play_again(self, answer):
+        # if player want to play again, it runs all over again
+        # else it exits
         self.answer = answer
         if self.answer.lower() == 'y' or self.answer.lower() == 'yes':
             return Game(PHRASES).main()
@@ -58,6 +63,7 @@ class Game:
             exit()
 
     def main(self):
+        # loops till game has been one or lost
         while not self.game_won():
             self.clear_screen()
             self.menu()
