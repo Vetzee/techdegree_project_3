@@ -17,7 +17,6 @@ class Character:
         self.guess = guess
         if self.guess == self.original:
             self.was_guessed = True
-        #return self.was_guessed
 
     def hidden(self):
         """
