@@ -26,6 +26,7 @@ class Character:
         if self.was_guessed:
             return self.original
         else:
-            return '_'
+            # to make it look more separated'
+            return '_ '
 
 
